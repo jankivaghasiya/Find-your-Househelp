@@ -1,12 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  index page
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="loader_bg">
+    <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
+  </div>
+
+  <header>
+    <div class="sitename">
+      <h1 style="font-size: 40px; font-weight: bold; color: black">Find Your HouseHelp</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+          <br>
+          <div class="full">
+            <div class="center-desk">
+              <div class="logo"> <a href=""><img src="{% static 'images/lgo.jpg' %}" alt="logo" /></a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+          <div class="menu-area">
+            <div class="limit-box">
+              <nav class="main-menu">
+                <ul class="menu-area-main">
+                  <li class="active"> <a href="">Home</a> </li>
+                  <li> <a href="">About</a> </li>
+                  <li> <a href="{% url 'pagesApp:contact' %}">Contact</a> </li>
+                  <li class="mean-last"> <a href="{% url 'accounts:helper' %}">Need a job?</a> </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+          <li><a class="buy" href="{% url 'accounts:login' %}">Login</a></li>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main_image">
+    <form action="accounts/register/customer">
+      <table class="table_class" align="right" rules="none">
+        <tr>
+          <td>Want to find a reliable housemaid?</td>
+        </tr>
+        <tr>
+          <td>Sign up here.</td>
+        </tr>
+        <tr>
+          <td align="center"><input type="submit" value="Sign Up" id="button"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <br>
+  <h1 style="text-align: center;">Helping you to find a trusted housemaid</h1>
+
+  <div class="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="title">
+            <h2>Services <strong class="black">that we </strong>offer</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/brooming.png' %}" /></i>
+            <h3>Brooming</h3>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/mopping.png' %}" /></i>
+            <h3>Mopping</h3>
+
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/cooking.png' %}" /></i>
+            <h3>Cooking</h3>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/utensil.png' %}" /></i>
+            <h3>Utensil Cleaning</h3>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/laundry.png' %}" /></i>
+            <h3>Laundry</h3>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="service-box">
+            <i><img src="{% static 'icon/babysitting.png' %}" /></i>
+            <h3>Baby Sitting</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock%}
